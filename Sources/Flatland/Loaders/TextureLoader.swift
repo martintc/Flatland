@@ -11,7 +11,7 @@ import MetalKit
 
 public class TextureLoader {
     
-    static let shared = TextureLoader()
+    public static let shared = TextureLoader()
     
     private var loader: MTKTextureLoader
     
@@ -25,7 +25,7 @@ public class TextureLoader {
 
     /// Load a MTLTexture
     /// - Parameter sourceName: Name of the file for a texture to be loaded
-    func loadTexture(sourceName: String) -> MTLTexture? {
+    public func loadTexture(sourceName: String) -> MTLTexture? {
         do {
             let texture = try self.loader.newTexture(name: sourceName,
                                                      scaleFactor: 1.0,

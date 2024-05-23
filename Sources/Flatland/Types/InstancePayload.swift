@@ -9,6 +9,6 @@ import Foundation
 import simd
 
 public struct InstancePayload {
-    var model: simd_float4x4
-    var textureCoordinates: simd_float4x2
+    public var model: simd_float4x4
+    public var textureCoordinates: simd_float4x2
 }

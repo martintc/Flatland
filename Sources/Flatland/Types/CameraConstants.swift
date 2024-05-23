@@ -8,6 +8,6 @@
 import simd
 
 public struct CameraConstants {
-    let projectionMatrix: simd_float4x4
-    let viewMatrix: simd_float4x4
+    public let projectionMatrix: simd_float4x4
+    public let viewMatrix: simd_float4x4
 }

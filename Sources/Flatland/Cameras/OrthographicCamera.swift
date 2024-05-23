@@ -60,51 +60,64 @@ public class OrthographicCamera: Entity {
         projectionMatrix[3][2] = 0
         projectionMatrix[3][3] = 1
     }
-    
-    func setRotation(by rotation: Float) {
+
+    /// Set rotation
+    public func setRotation(by rotation: Float) {
         self.rotation = rotation
         recalculateViewMatrix()
     }
-    
-    func setPosition(to vector: simd_float3) {
+
+    /// Set position
+    public func setPosition(to vector: simd_float3) {
         self.position = vector
         recalculateViewMatrix()
     }
-    
-    func getPosition() -> simd_float3 {
+
+    /// Get position
+    public func getPosition() -> simd_float3 {
         self.position
     }
-    
-    func getRotation() -> Float {
+
+    /// Get rotation
+    public func getRotation() -> Float {
         self.rotation
     }
-    
-    private func recalculateViewMatrix() {
+
+    /// Recalculate the view matrix for camera
+    private  func recalculateViewMatrix() {
         let transform: simd_float4x4 = matrix4x4_translation(self.position.x, self.position.y, self.position.z)
         self.viewMatrix = transform.inverse
     }
-    
-    func getProjectionViewMatrix() -> simd_float4x4 {
+
+    /// Get the Projection View matrix of the camera
+    public func getProjectionViewMatrix() -> simd_float4x4 {
         return projectionMatrix * viewMatrix
     }
-    
-    func getProjectionMatrix() -> simd_float4x4 {
+
+    /// Get the projection matrix of the camera
+    public func getProjectionMatrix() -> simd_float4x4 {
         self.projectionMatrix
     }
-    
-    func getViewMatrix() -> simd_float4x4 {
+
+    /// Get the view matrix of the camera
+    public func getViewMatrix() -> simd_float4x4 {
         self.viewMatrix
     }
-    
-    func getCameraConstants() -> CameraConstants {
+
+    /// Get the Camera Constants for use in loading to the GPU
+    public func getCameraConstants() -> CameraConstants {
         return CameraConstants(projectionMatrix: projectionMatrix, viewMatrix: viewMatrix)
     }
-    
-    func setAspectRatio(width: Float, height: Float) {
+
+    /// Set the aspect ratio
+    /// - Parameter width
+    /// - Parameter height
+    public func setAspectRatio(width: Float, height: Float) {
         self.aspectRatio = width / height
     }
-    
-    func getAspectRatio() -> Float {
+
+    /// Get the aspect ratio
+    public func getAspectRatio() -> Float {
         self.aspectRatio
     }
     

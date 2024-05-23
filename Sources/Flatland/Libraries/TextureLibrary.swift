@@ -8,7 +8,7 @@ import Foundation
 import MetalKit
 
 public class TextureLibrary {
-    static let shared = TextureLibrary()
+    public static let shared = TextureLibrary()
     
     private var library: [String: Texture]
     
@@ -18,7 +18,7 @@ public class TextureLibrary {
 
     /// Retrieve a texture from the library
     /// Parameter textureName: Name of the texture to get from library
-    func getTexture(_ textureName: String) -> Texture? {
+    public func getTexture(_ textureName: String) -> Texture? {
         guard let texture = self.library[textureName] else {
             return nil
         }
@@ -31,7 +31,7 @@ public class TextureLibrary {
     /// - Parameter textureName: Name of the texture to use as key for library
     /// - Parameter spriteWidth: Width of sprites in tilesheet
     /// - Parameter spriteHeight: Height of the sprite in the tilesheet
-    func loadTileAtlasIntoLibrary(sourceName: String, textureName: String, spriteWidth: Float, spriteHeight: Float) -> Bool {
+    public func loadTileAtlasIntoLibrary(sourceName: String, textureName: String, spriteWidth: Float, spriteHeight: Float) -> Bool {
         if sourceName.isEmpty || textureName.isEmpty {
             return false
         }
@@ -50,7 +50,7 @@ public class TextureLibrary {
     /// Load a texture into the library
     /// - Parameter sourceName: Name of the tilesheet file
     /// - Parameter textureName: Name of the texture to use as key for library
-    func loadTextureIntoLibrary(sourceName: String, textureName: String) -> Bool {
+    public func loadTextureIntoLibrary(sourceName: String, textureName: String) -> Bool {
         if sourceName.isEmpty || textureName.isEmpty {
             return false
         }

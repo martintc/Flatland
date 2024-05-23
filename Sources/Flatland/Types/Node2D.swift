@@ -11,14 +11,14 @@ public class Node2D: Entity {
     public var parent: Entity? = nil
     public var children: [Entity] = [Entity]()
 
-    var position: simd_float3 = simd_float3(0, 0, 0)
-    var scale: simd_float3 = simd_float3(1, 1, 1)
+    public var position: simd_float3 = simd_float3(0, 0, 0)
+    public var scale: simd_float3 = simd_float3(1, 1, 1)
     
-    init(position: simd_float3) {
+    public init(position: simd_float3) {
         self.position = position
     }
 
-    func getTransform() -> simd_float4x4 {
+    public func getTransform() -> simd_float4x4 {
         var model = matrix_identity_float4x4
 
         var scaleMatrix = matrix_identity_float4x4

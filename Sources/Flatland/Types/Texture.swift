@@ -10,7 +10,7 @@ import MetalKit
 import simd
 
 public class Texture {
-    var texture: MTLTexture
+    public var texture: MTLTexture
     var rows: Float = 0
     var columns: Float = 0
     
@@ -19,7 +19,7 @@ public class Texture {
     }
 
     /// Initialize a texture with only a texture
-    init(texture: MTLTexture) {
+    public init(texture: MTLTexture) {
         self.texture = texture
     }
     
@@ -28,7 +28,7 @@ public class Texture {
     /// - Parameter texture: Metal Texture
     /// - Parameter spriteWidth: Width in pixels of a sprite
     /// - Parameter spriteHeight: Height in pixels of a sprite
-    init(texture: MTLTexture, spriteWidth: Float, spriteHeight: Float) {
+    public init(texture: MTLTexture, spriteWidth: Float, spriteHeight: Float) {
         self.texture = texture
         rows = Float(texture.height) / spriteHeight
         columns = Float(texture.width) / spriteWidth
@@ -37,7 +37,7 @@ public class Texture {
     /// Get the texture coordinates of a sprite within a tilesheet
     /// - Parameter row: Row that a sprite lives on
     /// - Parameter column: Column that a sprite lives on
-    func getTileCoordiantesByLocation(row: Float, column: Float) -> simd_float4x2 {
+    public func getTileCoordiantesByLocation(row: Float, column: Float) -> simd_float4x2 {
         var coordinates = simd_float4x2()
         
         if rows == 0 || columns == 0 {
@@ -67,7 +67,7 @@ public class Texture {
     
     /// Get the texture coordinates for a sprite based on a texture id from a csv tile map
     /// - Parameter id: Identifier of sprite from csv tilemap
-    func getTileCoordinatesById(id: Int) -> simd_float4x2 {
+    public func getTileCoordinatesById(id: Int) -> simd_float4x2 {
         if id < 0 {
             return simd_float4x2()
         }

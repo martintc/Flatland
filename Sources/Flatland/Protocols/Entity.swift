@@ -11,12 +11,12 @@ public protocol Entity {
 }
 
 extension Entity {
-    mutating func addChild(_ entity: inout any Entity) {
+    public mutating func addChild(_ entity: inout any Entity) {
         entity.setParent(self)
         children.append(entity)
     }
 
-    mutating func setParent(_ entity: any Entity) {
+    public mutating func setParent(_ entity: any Entity) {
         parent = entity
     }
 }

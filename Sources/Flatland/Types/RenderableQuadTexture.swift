@@ -8,13 +8,11 @@
 import simd
 
 public class RenderableQuadTexture: Entity {
-    var textureCoordinates: simd_float4x2? = nil
+    public var textureCoordinates: simd_float4x2? = nil
     public var parent: Entity? = nil
     public var children: [Entity] = [Entity]()
 
-    init() { }
-
-    func setTextureById(_ id: Int, textureName: String) {
+    public func setTextureById(_ id: Int, textureName: String) {
         guard let texture = TextureLibrary.shared.getTexture(textureName) else {
             fatalError("Failed to set texture by id")
         }
@@ -22,7 +20,7 @@ public class RenderableQuadTexture: Entity {
         self.textureCoordinates = texture.getTileCoordinatesById(id: id)
     }
 
-    func setTextureByLocation(row: Int, column: Int, textureName: String) {
+    public func setTextureByLocation(row: Int, column: Int, textureName: String) {
         guard let texture = TextureLibrary.shared.getTexture(textureName) else {
             fatalError("Failed to set texture by location")
         }

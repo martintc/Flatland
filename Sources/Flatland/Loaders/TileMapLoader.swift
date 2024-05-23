@@ -14,7 +14,9 @@ public class TileMapLoader {
     /// - Parameter mapName: Name of the CSV file in bundle
     /// - Parameter startId: Id to start with for entity Ids
     /// - Parameter textureName : name of the texture to use
-    static func loadCsvTileMapToQuadTextures(mapName: String, startId: Int32, textureName: String) -> [RenderableQuadTexture] {
+    public static func loadCsvTileMapToQuadTextures(mapName: String,
+                                                    startId: Int32,
+                                                    textureName: String) -> [RenderableQuadTexture] {
         var entities = [RenderableQuadTexture]()
         var contents: String
         var startId = startId

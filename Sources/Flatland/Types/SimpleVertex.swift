@@ -8,5 +8,5 @@
 import simd
 
 public struct SimpleVertex {
-    var vertex: simd_float3
+    public var vertex: simd_float3
 }
