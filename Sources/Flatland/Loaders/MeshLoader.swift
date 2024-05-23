@@ -8,7 +8,7 @@
 import simd
 import Metal
 
-class MeshLoader {
+public class MeshLoader {
     static let shared = MeshLoader()
 
     func loadModel(vertices: [simd_float3], indicies: [ushort]) -> (any Mesh)? {

@@ -7,7 +7,7 @@
 
 import MetalKit
 
-protocol Mesh {
+public protocol Mesh {
     var vertexBuffer: MTLBuffer? { get set }
     var vertexCount: Int { get set }
     var indexCount: Int { get set }
