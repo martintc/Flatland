@@ -8,18 +8,17 @@
 import simd
 
 public final class Quad {
-    public var vertices: [simd_float3]
-    public var indicies: [ushort]
-
-    public init() {
-        vertices = [
+    public var verticies: [simd_float3] {
+        return [
           simd_float3(-0.5,  0.5, 0),
           simd_float3(-0.5, -0.5, 0),
           simd_float3( 0.5,  0.5, 0),
           simd_float3( 0.5, -0.5, 0)
         ]
+    }
 
-        indicies = [
+    public var indicies: [ushort] {
+        return [
           0, 1, 2,
           2, 3, 0
         ]
