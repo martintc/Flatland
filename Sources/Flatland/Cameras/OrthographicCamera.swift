@@ -8,7 +8,7 @@
 import Foundation
 import simd
 
-public class OrthographicCamera: Entity {
+public class OrthographicCamera  {
     var id: Int32
     
     var position: simd_float3
@@ -27,7 +27,6 @@ public class OrthographicCamera: Entity {
     var aspectRatio: Float = 0
 
     public var parent: Entity? = nil
-    public var children: [any Entity] = [Entity]()
     
     required init() {
         self.id = 0
