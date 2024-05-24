@@ -7,7 +7,7 @@
 
 import simd
 
-public class RenderableQuadTexture: Entity {
+public class RenderableQuadTexture {
     public var textureCoordinates: simd_float4x2? = nil
     public var parent: Entity? = nil
     public var children: [Entity] = [Entity]()
