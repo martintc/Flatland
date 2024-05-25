@@ -28,13 +28,13 @@ public class OrthographicCamera  {
 
     public var parent: Entity? = nil
     
-    required init() {
+    public required init() {
         self.id = 0
         self.position = simd_float3(0, 0, 0)
         self.scale = 1
     }
     
-    init(left: Float, right: Float, bottom: Float, top: Float, near: Float, far: Float) {
+    public init(left: Float, right: Float, bottom: Float, top: Float, near: Float, far: Float) {
         self.id = 0
         self.position = simd_float3(0, 0, 0)
         self.scale = 1
