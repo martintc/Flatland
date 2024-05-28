@@ -6,8 +6,8 @@
 //
 
 public class Position: Component {
-    var x: Float
-    var y: Float
+    public var x: Float
+    public var y: Float
 
     public init(_ x: Float, _ y: Float) {
         self.x = x
