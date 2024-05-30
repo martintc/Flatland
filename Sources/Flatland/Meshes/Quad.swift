@@ -12,8 +12,8 @@ public class Quad {
     /// Get the vertices of a quad
     public static func getVertices() -> [simd_float3] {
         return [
-          simd_float3(-0.5,  0.5, 0),
-          simd_float3(-0.5, -0.5, 0),
+          simd_float3(-0.5,  -0.5, 0),
+          simd_float3(-0.5, 0.5, 0),
           simd_float3( 0.5,  0.5, 0),
           simd_float3( 0.5, -0.5, 0)
         ]
