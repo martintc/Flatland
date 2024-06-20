@@ -10,6 +10,8 @@ import simd
 
 public class BasicVertexDescriptor: VertexDescriptor {
 
+    public init() { }
+
     public var vertexDescriptor: MTLVertexDescriptor {
        get {
             let mvd = MTLVertexDescriptor()
