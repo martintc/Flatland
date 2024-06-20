@@ -8,10 +8,10 @@
 import Metal
 import simd
 
-public class BasicVertexDescriptor {
+public class BasicVertexDescriptor: VertexDescriptor {
 
     public var vertexDescriptor: MTLVertexDescriptor {
-        get {
+       get {
             let mvd = MTLVertexDescriptor()
 
             mvd.layouts[0].stepFunction = .perVertex
