@@ -12,7 +12,7 @@ public class BasicVertexDescriptor {
 
     public var vertexDescriptor: MTLVertexDescriptor
 
-    init() {
+    public init() {
         let mvd = MTLVertexDescriptor()
 
         mvd.layouts[0].stepFunction = .perVertex
