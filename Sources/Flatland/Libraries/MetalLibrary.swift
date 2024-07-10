@@ -8,7 +8,7 @@
 import Metal
 
 public class MetalLibrary {
-    static let shared = MetalLibrary()
+    public static let shared = MetalLibrary()
 
     private var library: MTLLibrary? = nil
     private var functions: [String: any MTLFunction] = [String: any MTLFunction]()
